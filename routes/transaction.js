@@ -6,7 +6,7 @@ const TransactionController = require('../app/controller/transaction.controller'
 
 /**
  * @openapi
- * /transaction/{search}:
+ * /transaction/{search}/{order_by}:
  *  get:
  *     tags:
  *     - Transaction
@@ -16,6 +16,13 @@ const TransactionController = require('../app/controller/transaction.controller'
  *       in: path
  *       description: search price or menu
  *       required: false
+ *     - name: order_by
+ *       in: query
+ *       schema: 
+ *         type: string,
+ *         enum: [ asc, desc]
+ *       description: ordering by customer name
+ *       required: false
  *     responses:
  *      200:
  *        description: Success
@@ -24,7 +31,7 @@ const TransactionController = require('../app/controller/transaction.controller'
  *      500:
  *        description: Server Error
  */
-router.get('/transaction/:search',  TransactionController.get)
+router.get('/transaction/:search/:order_by',  TransactionController.get)
 
 /**
  * @openapi

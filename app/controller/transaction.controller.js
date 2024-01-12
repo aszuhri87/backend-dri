@@ -3,6 +3,11 @@ const db = require('../../config/database')
 const get = async (req, res) => {
     try {
         var search = req.params.search;
+        var order_by = req.params.order_by;
+
+        if (!order_by){
+            order_by = 'asc'
+        }
 
         if (!search){
             search = '';
@@ -32,7 +37,7 @@ const get = async (req, res) => {
             GROUP BY
                 c.id, c.name
             ORDER BY
-                c.name ASC;
+                c.name ${order_by};
         `
 
         var customer = await db.query(query);
