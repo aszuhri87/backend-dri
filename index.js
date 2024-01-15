@@ -6,6 +6,7 @@ var express = require('express')
 var app = express()
 
 const db = require('./config/database')
+const migration = require('./database/migration')
 const swaggerDocs = require("./swagger");
 
 swaggerDocs.swagger(app);
