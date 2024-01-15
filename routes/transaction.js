@@ -17,10 +17,10 @@ const TransactionController = require('../app/controller/transaction.controller'
  *       description: search price or menu
  *       required: false
  *     - name: order_by
- *       in: query
+ *       in: path
  *       schema: 
  *         type: string,
- *         enum: [ asc, desc]
+ *         enum: [asc, desc]
  *       description: ordering by customer name
  *       required: false
  *     responses:

@@ -6,7 +6,7 @@ const get = async (req, res) => {
         var order_by = req.params.order_by;
 
         if (!order_by){
-            order_by = 'asc'
+            order_by = 'ASC'
         }
 
         if (!search){
