@@ -9,4 +9,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["node","server.js","--prefix","master","--host","0.0.0.0","--port","8080"]
+CMD ["node","index.js","0.0.0.0","--port","8080"]
